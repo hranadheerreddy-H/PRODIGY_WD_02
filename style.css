@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    overflow: hidden;
+}
+
+/* Main Container */
+.container{
+    width: 420px;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    color: white;
+    animation: fadeIn 1s ease;
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+.container h1{
+    font-size: 40px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* Display */
+#display{
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00e5ff;
+}
+
+/* Buttons */
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.buttons button{
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Button Colors */
+#start{
+    background: #28a745;
+    color: white;
+}
+
+#pause{
+    background: #ffc107;
+    color: black;
+}
+
+#reset{
+    background: #dc3545;
+    color: white;
+}
+
+#lap{
+    background: #00bcd4;
+    color: white;
+}
+
+/* Hover Effect */
+.buttons button:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* Lap Section */
+.laps{
+    margin-top: 30px;
+    text-align: left;
+}
+
+.laps h2{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Lap List */
+#lapList{
+    max-height: 180px;
+    overflow-y: auto;
+    list-style: none;
+    padding-right: 5px;
+}
+
+/* Lap Items */
+#lapList li{
+    background: rgba(255,255,255,0.15);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#lapList li:hover{
+    transform: scale(1.02);
+    background: rgba(255,255,255,0.25);
+}
+
+/* Scrollbar */
+#lapList::-webkit-scrollbar{
+    width: 5px;
+}
+
+#lapList::-webkit-scrollbar-thumb{
+    background: #00bcd4;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media(max-width: 500px){
+
+    .container{
+        width: 90%;
+        padding: 25px;
+    }
+
+    #display{
+        font-size: 45px;
+    }
+
+    .buttons button{
+        width: 100%;
+    }
+}
